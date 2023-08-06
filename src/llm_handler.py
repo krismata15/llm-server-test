@@ -5,8 +5,12 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from prompt_template import template_string, style
 
-openai.api_key = os.environ['OPENAI_API_KEY']
-chat = ChatOpenAI(temperature=0.0)
+try:
+    openai.api_key = os.environ['OPENAI_API_KEY']
+    chat = ChatOpenAI(temperature=0.0)
+except KeyError:
+    print('Error: OPENAI_API_KEY environment variable not set.')
+    # raise Exception("OPENAI_API_KEY environment variable not set.")
 
 prompt_template = ChatPromptTemplate.from_template(template_string)
 
