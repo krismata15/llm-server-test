@@ -3,7 +3,8 @@ import openai
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
-from prompt_template import template_string, style
+
+from src.prompt_template import template_string, style
 
 try:
     openai.api_key = os.environ['OPENAI_API_KEY']

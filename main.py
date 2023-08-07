@@ -1,7 +1,10 @@
+import os
+
 from flask import Flask, jsonify, request
 from dotenv import load_dotenv
 
-from llm_handler import chat_user
+from src.llm_handler import chat_user
+from src.vertex_implementation import test_trivia_llm_function
 
 load_dotenv()
 
@@ -21,5 +24,11 @@ def chat():
     return jsonify({'response': response})
 
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=4000, debug=True)
+@app.route('/generate-trivia', methods=['GET'])
+def generate_trivia():
+    response = test_trivia_llm_function("star wars")
+    return jsonify({'response': response})
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

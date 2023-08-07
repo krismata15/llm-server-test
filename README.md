@@ -15,7 +15,7 @@ If a key is not provided, the server will print and error and continue working w
 ### Local
 ```bash
 pip install -r requirements.txt
-python app.py
+python main.py
 ```
 
 ### Docker
