@@ -11,13 +11,12 @@ vertexai.init(project="proyecto-llm", location="us-central1")
 def test_trivia_llm_function(trivia_subject, trivia_question_number=2, trivia_options_number=4):
     template = """Generate a {trivia_subject} trivia
     of {trivia_question_number} random question with {trivia_options_number} options
-    and show the answer with an explanation of why it is the right answer
+    and show the answer 
     with a difficulty of {trivia_difficulty} existing three types of difficulty: easy, medium and hard.
     Show in json format array, without markdown, the following fields:
     'question',
     'options',
     'answer',
-    'explanation'
     """
     prompt = PromptTemplate(template=template,
                             input_variables=["trivia_subject",
@@ -26,7 +25,7 @@ def test_trivia_llm_function(trivia_subject, trivia_question_number=2, trivia_op
                                              "trivia_question_number"])
 
     llm = VertexAI(model_name="text-bison@001",
-                   max_output_tokens=300,
+                   max_output_tokens=512,
                    temperature=0.1,
                    top_p=0.8,
                    top_k=40,

@@ -22,3 +22,13 @@ that is delimited by triple backticks \
 into a style that is {style}. \
 text: ```{text}```
 """
+
+example_trivia_template = """Generate a {trivia_subject} trivia
+    of {trivia_question_number} random question with {trivia_options_number} options
+    and show the answer 
+    with a difficulty of {trivia_difficulty} existing three types of difficulty: easy, medium and hard.
+    Show in json format array, without markdown, the following fields:
+    'question',
+    'options',
+    'answer',
+    """
