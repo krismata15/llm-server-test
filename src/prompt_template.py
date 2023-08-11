@@ -32,3 +32,22 @@ example_trivia_template = """Generate a {trivia_subject} trivia
     'options',
     'answer',
     """
+
+trivia_topic_examples = [
+    "Star Wars 🌌",
+    "Harry Potter 🧙‍♂️",
+    "Lord of the Rings 🗡️",
+    "Marvel Cinematic Universe 🦸‍♂️",
+    "DC Extended Universe 🦸‍♀️",
+    "The Simpsons 😂",
+    "Game of Thrones 👑",
+    "The Big Bang Theory 🤓",
+    "Friends 👬",
+    "The Office 😂",
+    "Messi ⚽️",
+    "C. Ronaldo ⚽️",
+    "LeBron James 🏀",
+    "Michael Jordan 🏀",
+    "Tiger Woods ⛳️",
+    "Usain Bolt 💨",
+]
