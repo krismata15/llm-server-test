@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, jsonify, request
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 from src.llm_handler import chat_user
 from src.prompt_template import trivia_topic_examples
@@ -10,6 +11,7 @@ from src.vertex_implementation import test_trivia_llm_function, trivia_text_llm_
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/', methods=['GET'])
